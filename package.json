@@ -1,0 +1,25 @@
+{
+  "name": "ap_1_project-master",
+  "version": "1.0.0",
+  "description": "web project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "Prashasti Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.10",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

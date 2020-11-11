@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+}
+.booking-form{
+    max-width: 45%;
+    border: 1px solid black;
+    padding: 30px;
+    margin: 10% auto 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form-option {
+    margin: 0 30px;
+}
+
+.carousel{
+    max-width: 80%;
+    margin: 3% auto 5%;
+}
+.carousel-caption {
+    bottom: 50px;
+}
+.carousel-caption a{
+    color: white;
+}
+.carousel-caption a:hover{
+    text-decoration: none;
+}
+
+.flight-booking-body{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../../public/images/sky-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.hotel-booking-body{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../../public/images/hotel-1-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.car-booking-body{
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(../../public/images/road-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}

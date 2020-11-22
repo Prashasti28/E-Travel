@@ -2,6 +2,8 @@ const express = require('express')
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
+const https = require("https");
+const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 //const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger');
@@ -41,7 +43,7 @@ app.use('/', pages);
 
 const server = http.createServer((req, res) => {
 	let filePath = path.join(
-      __dirname, 
+      __dirname,
      'public',
       req.url === '/' ? 'index.html' : req.url
     );
@@ -75,10 +77,10 @@ const server = http.createServer((req, res) => {
     	if(err) {
     		if(err.code == 'ENOENT') {
     			//Page not found
-    			fs.readFile(path.join(__dirname, 'public', '404.html'), 
+    			fs.readFile(path.join(__dirname, 'public', '404.html'),
                 (err, content) => {
     			   res.writeHead(200, { 'Content-Type': 'text/html' });
-                   res.end(content, 'utf8'); 
+                   res.end(content, 'utf8');
     			 })
     		} else {
     			// Some server error
@@ -88,14 +90,14 @@ const server = http.createServer((req, res) => {
     	}   else {
     		// Success
     		res.writeHead(200, { 'Content-Type': contentType });
-    		res.end(content, 'utf8');   //This content here is of line 94 
+    		res.end(content, 'utf8');   //This content here is of line 94
     	}
     });
 });
-  
+
 
 // Init middleware           //request, response, next
-// app.use(logger);    //this way everytime I send API, Hello is shown in the terminal                                                                   //so we did these changes          
+// app.use(logger);    //this way everytime I send API, Hello is shown in the terminal                                                                   //so we did these changes
 
 
 // Handlebars Middleware
@@ -105,11 +107,11 @@ const server = http.createServer((req, res) => {
 
 //Bosy Parser Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));  
+app.use(express.urlencoded({ extended: false }));
 
 
 //Homepage Route
-// app.get('/',(req, res) => 
+// app.get('/',(req, res) =>
 //    res.render('index', {
 // 	title: 'User App',
 // 	users

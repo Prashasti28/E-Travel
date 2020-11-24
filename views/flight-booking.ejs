@@ -1,0 +1,73 @@
+<%- include('partials/booking-form-header') %>
+
+<body class="flight-booking-body">
+  <%- include('navbar') %>
+  <div class="booking-form">
+    <form>
+      <div>
+        <h2>Book A Flight</h2>
+      </div>
+      <hr>
+      <div class="booking-form-input-box">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputDepartureState">Flying From</label>
+            <select class="custom-select" id="inputDepartureState">
+              <option selected>Choose</option>
+              <option value="loc1">One</option>
+              <option value="loc2">Two</option>
+              <option value="loc3">Three</option>
+              <option value="loc4">Four</option>
+              <option value="loc5">Five</option>
+              <option value="loc6">Six</option>
+              <option value="loc7">Seven</option>
+              <option value="loc8">Eight</option>
+              <option value="loc9">Nine</option>
+              <option value="loc10">Ten</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputArrivalState">Flying To</label>
+            <select class="custom-select" id="inputArrivalState">
+              <option selected>Choose</option>
+              <option value="loc1">One</option>
+              <option value="loc2">Two</option>
+              <option value="loc3">Three</option>
+              <option value="loc4">Four</option>
+              <option value="loc5">Five</option>
+              <option value="loc6">Six</option>
+              <option value="loc7">Seven</option>
+              <option value="loc8">Eight</option>
+              <option value="loc9">Nine</option>
+              <option value="loc10">Ten</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputDepDate">Departure Date</label>
+            <input type="date" class="form-control" id="inputDepDate">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputRetDate">Return Date</label>
+            <input type="date" class="form-control" id="inputRetDate">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="passengerCount">Passenger(s)</label>
+            <input type="number" value="1" class="form-control" id="passengerCount">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="travelClass">Travel Class</label>
+            <select class="custom-select" id="travelClass">
+              <option selected>Economy</option>
+              <option>Business</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Search Flights</button>
+      </div>
+    </form>
+  </div>
+<%- include('partials/footer') %>

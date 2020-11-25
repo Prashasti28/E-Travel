@@ -102,5 +102,10 @@ a.login-form-link{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
-
+.nav-item{
+  margin: 0 10px;
+}
+.search-form{
+  margin-left: 3%;
+  margin-right: 4%;
+}

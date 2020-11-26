@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+
 <body>
   <%- include('navbar') %>
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -11,22 +12,22 @@
       <div class="carousel-item active">
         <a href="/flight-booking"><img src="images/flight-bg.jpg" class="d-block w-100" alt="book-flight-image"></a>
         <div class="carousel-caption d-none d-md-block">
-            <h1><a href="/flight-booking">Book a Flight</a></h1>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h1><a href="/flight-booking">Book a Flight</a></h1>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
         <a href="/hotel-booking"><img src="images/hotel-bg.jpg" class="d-block w-100" alt="book-hotel-image"></a>
         <div class="carousel-caption d-none d-md-block">
-            <h1><a href="/hotel-booking">Book a Hotel</a></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h1><a href="/hotel-booking">Book a Hotel</a></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
         <a href="/car-booking"><img src="images/car-bg.jpg" class="d-block w-100" alt="book-car-image"></a>
         <div class="carousel-caption d-none d-md-block">
-            <h1><a href="/car-booking">Book a Car</a></h1>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h1><a href="/car-booking">Book a Car</a></h1>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </div>
       </div>
     </div>
@@ -38,41 +39,51 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-</div>
+  </div>
 
 
-<div class="jumbotron covid-advisory">
+  <div class="jumbotron covid-advisory">
     <h1 class="display-4">Travelling in the Times of Covid-19</h1>
     <p class="lead">The COVID-19 pandemic is a rapidly evolving situation and it is important to keep yourself updated at all times, especially before making major decisions regarding travel.</p>
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" target="_blank" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19-travel-advice-for-the-general-public" role="button">WHO Guidelines</a>
-    <a class="btn btn-primary btn-lg" target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" role="button">CDC Guidelines</a>
-</div>
+    <a class="btn btn-info btn-lg" target="_blank" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19-travel-advice-for-the-general-public" role="button">WHO Guidelines</a>
+    <a class="btn btn-info btn-lg" target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" role="button">CDC Guidelines</a>
+  </div>
 
-<!-- <div class="jumbotron weather-checker">
+  <div class="jumbotron weather-checker">
     <h1 class="display-4">Weather is Everything</h1>
     <p class="lead">We provide weather overviews for each of our holiday destinations. Plan ahead!</p>
     <hr class="my-4">
 
     <div class="form-group col-md-6">
-        <form action="/submit-weather-form" method="post">
-          <label for="inputDepartureState">Holiday Destination</label>
-          <select class="custom-select" id="inputDepartureState">
-              <option selected>Choose</option>
-              <option value="loc1">One</option>
-              <option value="loc2">Two</option>
-              <option value="loc3">Three</option>
-              <option value="loc4">Four</option>
-              <option value="loc5">Five</option>
-              <option value="loc6">Six</option>
-              <option value="loc7">Seven</option>
-              <option value="loc8">Eight</option>
-              <option value="loc9">Nine</option>
-              <option value="loc10">Ten</option>
-          </select>
-        </form>
+      <form action="/weather-form" method="post">
+        <label for="weatherCity">Holiday Destination</label>
+        <select class="custom-select" name="weatherCity" required>
+          <option selected>Choose</option>
+          <option value="delhi">New Delhi, Delhi</option>
+          <option value="mumbai">Mumbai, Maharashtra</option>
+          <option value="hyderabad">Hyderabad, Telangana</option>
+          <option value="chennai">Chennai, Tamil Nadu</option>
+          <option value="kolkata">Kolkata, West Bengal</option>
+          <option value="bengaluru">Bengaluru, Karnataka</option>
+          <option value="kochi">Kochi, Kerala</option>
+          <option value="Jaipur">Jaipur, Rajasthan</option>
+          <option value="dabolim">Dabolim, Goa</option>
+          <option value="ahmedabad">Ahmedabad, Gujarat</option>
+        </select>
+      <button style="margin-top: 25px" type="submit" class="btn btn-primary btn-lg" onclick="showWeather()">Search for Weather</button>
+    </form>
+  </div>
+    <div id="weather-result">
+
+
     </div>
-    <button type="submit" class="btn btn-primary btn-lg" target="_blank">Search for Weather</button>
-</div> -->
-<%- include('partials/footer') %>
+  </div>
+
+  <script>
+    function showWeather() {
+      //document.getElementById("weather-result").innerHTML = "";
+    }
+  </script>
+  <%- include('partials/footer') %>

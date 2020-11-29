@@ -153,10 +153,15 @@ app.post("/weather-form", function(req,res){
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
       const weatherIcon = weatherData.weather[0].icon;
+      const humidity = weatherData.main.humidity;
+      const tempMin = weatherData.main.temp_min;
+      const tempMax = weatherData.main.temp_max;
       const imageURL = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
       res.write("<h1>The temperature in " + selectedCity + " is " + temp + " degrees Fahrenheit.</h1>")
-      res.write("<p>The weather is currently " + weatherDescription + "</p>");
+      res.write("<p>Weather Description: " + weatherDescription + "</p>");
       res.write("<img src=" + imageURL + " alt='image'>");
+      res.write("<p>Humidity: " + humidity + "%</p>");
+      res.write("<p>Minimum and Maximum temperature: " + tempMin + ", " + tempMax + "</p>");
       res.send();
     });
   });

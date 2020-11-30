@@ -10,6 +10,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
+const Amadeus = require('amadeus');
 
 
 const app = express();
@@ -29,6 +30,16 @@ app.use(passport.session());
 
 mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.set("useCreateIndex", true)
+
+// const amadeus = new Amadeus({
+//   AmadeusId: process.env.AMADEUS_KEY,
+//   AmadeusSecret: process.env.AMADEUS_SECRET
+// });
+
+const amadeus = new Amadeus({
+  clientId: process.env.AMADEUS_KEY,
+  clientSecret: process.env.AMADEUS_SECRET
+});
 
 const userSchema = new mongoose.Schema ({
   email: String,
@@ -74,7 +85,7 @@ app.get("/auth/google",
 app.get("/auth/google/goclouds",
 passport.authenticate("google", { failureRedirect: "/login" }),
 function(req, res) {
-  // Successful authentication, redirect home.
+  // Successful authentication, redirect to frontpage.
   res.redirect("/frontpage");
 });
 
@@ -102,8 +113,26 @@ app.get("/hotel-booking", function(req, res){
   res.render("hotel-booking");
 });
 
+app.post("/hotel-booking-submit", function(req,res){
+  console.log(req.body);
+  const hotelLocation = req.body.hotelLocation; //city code
+  const checkInDate = req.body.checkInDate;
+  const checkOutDate = req.body.checkOutDate;
+  const guestCount = req.body.guestCount;
+  const roomCount= req.body.roomCount;
+});
+
 app.get("/car-booking", function(req, res){
   res.render("car-booking");
+});
+
+app.post("/car-booking-submit", function(req,res){
+  console.log(req.body);
+  const pickupLocation = req.body.pickupLocation; //city code
+  const pickupDate = req.body.pickupDate;
+  const dropoffDate = req.body.dropoffDate;
+  const seatingCapacity= req.body.seatingCapacity;
+  const carType = req.body.carType;
 });
 
 app.get("/about", function(req,res){

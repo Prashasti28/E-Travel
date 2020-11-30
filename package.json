@@ -11,6 +11,7 @@
   "author": "Prashasti Agarwal",
   "license": "ISC",
   "dependencies": {
+    "amadeus": "^5.5.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",

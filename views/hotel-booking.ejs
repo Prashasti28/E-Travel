@@ -3,7 +3,7 @@
 <body class="hotel-booking-body">
   <%- include('navbar') %>
   <div class="booking-form">
-    <form>
+    <form action="/hotel-booking-submit" method="post">
       <div>
         <h2>Book a Hotel</h2>
       </div>
@@ -11,38 +11,38 @@
       <div class="booking-form-input-box">
         <div class="form-group">
           <label for="hotelLocation">Holiday Destination</label>
-          <select class="form-control" id="hotelLocation">
+          <select class="form-control" name="hotelLocation" required>
             <option selected>Choose</option>
-            <option value="loc1">One</option>
-            <option value="loc2">Two</option>
-            <option value="loc3">Three</option>
-            <option value="loc4">Four</option>
-            <option value="loc5">Five</option>
-            <option value="loc6">Six</option>
-            <option value="loc7">Seven</option>
-            <option value="loc8">Eight</option>
-            <option value="loc9">Nine</option>
-            <option value="loc10">Ten</option>
+            <option value="SJO">San Jose, California</option>
+            <option value="BOS">Boston, Massachusetts</option>
+            <option value="LAX">Los Angeles, California</option>
+            <option value="PHX">Phoenix, Arizona</option>
+            <option value="SFO">San Francisco, California</option>
+            <option value="JAN">Jackson, Mississippi</option>
+            <option value="CLE">Cleveland, Ohio</option>
+            <option value="SEA">Seattle, Washington</option>
+            <option value="PHL">Philadelphia, Pennsylvania</option>
+            <option value="ALB">Albany, New York</option>
           </select>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="checkInDate">Check-In</label>
-            <input type="date" class="form-control" id="checkInDate">
+            <input type="date" class="form-control" name="checkInDate" required>
           </div>
           <div class="form-group col-md-6">
             <label for="checkOutDate">Check-Out</label>
-            <input type="date" class="form-control" id="checkOutDate">
+            <input type="date" class="form-control" name="checkOutDate" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="guestCount">Guest(s)</label>
-            <input type="number" value="2" class="form-control" id="guestCount">
+            <input type="number" value="2" class="form-control" name="guestCount" required>
           </div>
           <div class="form-group col-md-6">
             <label for="roomCount">Room(s)</label>
-            <input type="number" value="1" class="form-control" id="roomCount">
+            <input type="number" value="1" class="form-control" name="roomCount" required>
           </div>
         </div>
       </div>

@@ -31,11 +31,6 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.set("useCreateIndex", true)
 
-// const amadeus = new Amadeus({
-//   AmadeusId: process.env.AMADEUS_KEY,
-//   AmadeusSecret: process.env.AMADEUS_SECRET
-// });
-
 const amadeus = new Amadeus({
   clientId: process.env.AMADEUS_KEY,
   clientSecret: process.env.AMADEUS_SECRET
@@ -134,7 +129,7 @@ app.post("/hotel-booking-submit", function(req,res){
 //       const contact = hotelData.data[0].hotel.contact.phone;
 //     });
 //   });
-// });
+});
 
 app.get("/car-booking", function(req, res){
   res.render("car-booking");

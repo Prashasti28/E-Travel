@@ -109,25 +109,39 @@ app.get("/flight-booking", function(req, res){
   res.render("flight-booking");
 });
 
+
 app.get("/hotel-booking", function(req, res){
   res.render("hotel-booking");
 });
 
 app.post("/hotel-booking-submit", function(req,res){
-  console.log(req.body);
+  //console.log(req.body);
   const hotelLocation = req.body.hotelLocation; //city code
   const checkInDate = req.body.checkInDate;
   const checkOutDate = req.body.checkOutDate;
   const guestCount = req.body.guestCount;
   const roomCount= req.body.roomCount;
-});
+//   hotelURL = "https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=" + hotelLocation;
+//   https.get(hotelURL,function(response){
+//     response.on("data", function(data){
+//       const hotelData = JSON.parse(data);
+//       const name = hotelData.data[0].hotel.name;
+//       const id = hotelData.data[0].hotel.hotelId;
+//       const rating = hotelData.data[0].hotel.rating;
+//       const address = hotelData.data[0].hotel.address.lines + hotelData.data[0].hotel.address.cityName;
+//       const state = hotelData.data[0].hotel.address.stateCode;
+//       const postalCode = hotelData.data[0].hotel.address.postalCode;
+//       const contact = hotelData.data[0].hotel.contact.phone;
+//     });
+//   });
+// });
 
 app.get("/car-booking", function(req, res){
   res.render("car-booking");
 });
 
 app.post("/car-booking-submit", function(req,res){
-  console.log(req.body);
+  //console.log(req.body);
   const pickupLocation = req.body.pickupLocation; //city code
   const pickupDate = req.body.pickupDate;
   const dropoffDate = req.body.dropoffDate;
@@ -183,8 +197,8 @@ app.post("/weather-form", function(req,res){
   const api_key = process.env.API_KEY;
   const selectedCity = req.body.weatherCity;
   const units = "imperial";
-  const url = "https://api.openweathermap.org/data/2.5/weather?q=" + selectedCity + "&appid=" + process.env.API_KEY + "&units=" + units;
-  https.get(url,function(response){
+  const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + selectedCity + "&appid=" + process.env.API_KEY + "&units=" + units;
+  https.get(weatherURL,function(response){
     response.on("data", function(data){
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;

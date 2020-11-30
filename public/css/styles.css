@@ -109,3 +109,21 @@ a.login-form-link{
   margin-left: 3%;
   margin-right: 4%;
 }
+
+.about-img{
+  display: block;
+  margin: 50px auto;
+}
+
+.contact-table{
+  margin: 5% 10%;
+}
+/* .contact-table tr{
+  margin: 10px 0;
+}
+.contact-table tr p{
+  margin: 0;
+}
+.contact-table tr th{
+  margin-right: 20px;
+} */

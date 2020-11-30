@@ -106,6 +106,14 @@ app.get("/car-booking", function(req, res){
   res.render("car-booking");
 });
 
+app.get("/about", function(req,res){
+  res.render("about");
+});
+
+app.get("/contact-us", function(req,res){
+  res.render("contact-us");
+});
+
 app.get("/logout", function(req, res){
   req.logout();
   res.redirect("/");

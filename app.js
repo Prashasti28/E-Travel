@@ -116,19 +116,19 @@ app.post("/hotel-booking-submit", function(req,res){
   const checkOutDate = req.body.checkOutDate;
   const guestCount = req.body.guestCount;
   const roomCount= req.body.roomCount;
-//   hotelURL = "https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=" + hotelLocation;
-//   https.get(hotelURL,function(response){
-//     response.on("data", function(data){
-//       const hotelData = JSON.parse(data);
-//       const name = hotelData.data[0].hotel.name;
-//       const id = hotelData.data[0].hotel.hotelId;
-//       const rating = hotelData.data[0].hotel.rating;
-//       const address = hotelData.data[0].hotel.address.lines + hotelData.data[0].hotel.address.cityName;
-//       const state = hotelData.data[0].hotel.address.stateCode;
-//       const postalCode = hotelData.data[0].hotel.address.postalCode;
-//       const contact = hotelData.data[0].hotel.contact.phone;
-//     });
-//   });
+  hotelURL = "https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=" + hotelLocation;
+  https.get(hotelURL,function(response){
+    response.on("data", function(data){
+      const hotelData = JSON.parse(data);
+      const name = hotelData.data[0].hotel.name;
+      const id = hotelData.data[0].hotel.hotelId;
+      const rating = hotelData.data[0].hotel.rating;
+      const address = hotelData.data[0].hotel.address.lines + hotelData.data[0].hotel.address.cityName;
+      const state = hotelData.data[0].hotel.address.stateCode;
+      const postalCode = hotelData.data[0].hotel.address.postalCode;
+      const contact = hotelData.data[0].hotel.contact.phone;
+    });
+  });
 });
 
 app.get("/car-booking", function(req, res){

@@ -1,0 +1,491 @@
+[{
+  "_id": 1,
+  "capacity": 5,
+  "price": 100,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "SJO"
+},{
+  "_id": 2,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "SJO",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 3,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "SJO",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 4,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "SJO",
+  "capacity": 5,
+  "price": 175
+},{
+  "_id": 5,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "SJO",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 6,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "SJO",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 7,
+  "carName": "Audi A8",
+  "carType": "Luxury",
+  "pickUpLocation": "SJO",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 8,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "BOS",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 9,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "BOS",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 10,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "BOS",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 11,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "BOS",
+  "capacity": 5,
+  "price": 175
+},{
+  "_id": 12,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "BOS",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 13,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "BOS",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 14,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "BOS",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 15,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "LAX",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 16,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "LAX",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 17,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "LAX",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 18,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "LAX",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 19,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "LAX",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 20,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "LAX",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 21,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "LAX",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 22,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "PHX",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 23,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "PHX",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 24,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "PHX",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 25,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "PHX",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 26,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "PHX",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 27,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "PHX",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 28,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "PHX",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 36,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "JAN",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 37,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "JAN",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 38,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "JAN",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 39,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "JAN",
+  "capacity": 5,
+  "price": 175
+},{
+  "_id": 40,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "JAN",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 41,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "JAN",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 42,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "JAN",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 43,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "CLE",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 44,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "CLE",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 45,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "CLE",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 46,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "CLE",
+  "capacity": 5,
+  "price": 175
+},{
+  "_id": 47,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "CLE",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 48,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "CLE",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 49,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "CLE",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 50,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "SEA",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 51,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "SEA",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 52,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "SEA",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 53,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "SEA",
+  "capacity": 5,
+  "price": 170
+},{
+  "_id": 54,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "SEA",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 55,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "SEA",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 56,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "SEA",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 57,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "PHL",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 58,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "PHL",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 59,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "PHL",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 60,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "PHL",
+  "capacity": 5,
+  "price": 170
+},{
+  "_id": 61,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "PHL",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 62,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "PHL",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 63,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "PHL",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 64,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "ALB",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 65,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "ALB",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 66,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "ALB",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 67,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "ALB",
+  "capacity": 5,
+  "price": 175
+},{
+  "_id": 68,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "ALB",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 69,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "ALB",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 70,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "ALB",
+  "capacity": 5,
+  "price": 500
+},{
+  "_id": 29,
+  "carName": "Maruti Swift",
+  "carType": "Hatchback",
+  "pickUpLocation": "SFO",
+  "capacity": 5,
+  "price": 100
+},{
+  "_id": 30,
+  "carName": "Maruti Ciaz",
+  "carType": "Sedan",
+  "pickUpLocation": "SFO",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 31,
+  "carName": "Toyota Innova",
+  "carType": "SUV",
+  "pickUpLocation": "SFO",
+  "capacity": 8,
+  "price": 200
+},{
+  "_id": 32,
+  "carName": "Volkswagen Beetle",
+  "carType": "Hatchback",
+  "pickUpLocation": "SFO",
+  "capacity": 5,
+  "price": 175
+},{
+  "_id": 33,
+  "carName": "Hyundai Creta",
+  "carType": "SUV",
+  "pickUpLocation": "SFO",
+  "capacity": 7,
+  "price": 200
+},{
+  "_id": 34,
+  "carName": "Honda Amaze",
+  "carType": "Sedan",
+  "pickUpLocation": "SFO",
+  "capacity": 5,
+  "price": 150
+},{
+  "_id": 35,
+  "carName": "Audi",
+  "carType": "Luxury",
+  "pickUpLocation": "SFO",
+  "capacity": 5,
+  "price": 500
+}]

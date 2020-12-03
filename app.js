@@ -28,7 +28,18 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true, useUnifiedTopology: true})
+//******* MONGODB CONNECT
+mongoose.connect(
+  "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority",   //"mongodb://localhost:27017/E-Travel" 
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex:true
+  },
+  () => {
+    console.log("Users Database (MongoDB) is now connected");
+  }
+);
 mongoose.set("useCreateIndex", true)
 
 const amadeus = new Amadeus({

@@ -1,5 +1,8 @@
-# E-Travel
-Sign In/Sign Up
-Check IN/Check Out feature
-REST - Representational State Transfer
-CRUD - Create(Post),Read(Get),Update(Put),Delete(Delete)
+# GoClouds
+GoClouds is E-Travel website focused on searching and booking flights/hotels and cars.\
+We have used Amadeus for hotels and flights and basic mongodb for cars\
+
+## References
+https://youtu.be/ZKwrOXl5TDI\
+https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference\
+BootStrap

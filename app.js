@@ -40,7 +40,9 @@ mongoose.connect(
     console.log("Users Database (MongoDB) is now connected");
   }
 );
-// mongoose.set("useCreateIndex", true)
+mongoose.set("useCreateIndex", true)
+
+//const car = mongoose.model('Car.model', {name: String});
 
 const amadeus = new Amadeus({
   clientId: process.env.AMADEUS_KEY,
@@ -155,7 +157,7 @@ app.get("/car-booking", function(req, res){
 //     console.log("Users Database (MongoDB) is now connected");
 //   }
 // )
-//   const cursor = db.collection('cars').find();
+//   const cursor = db.collection('cars').find(); //db is replaced by the name in mongoose library
 //   cursor.forEach(function(doc, err){
 //    resultArray.push(doc);
 //   }, function(){
@@ -188,12 +190,6 @@ app.get("/car-booking", function(req, res){
 // });
 });
 
-// //const car = mongoose.model('Cars', {name: String});
-
-// //mongoose.set("useCreateIndex", true)
-
-// // const carRouter = require('./routes/car');
-// // app.use('/car', carRouter)
 
 
 app.get("/about", function(req,res){

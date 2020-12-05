@@ -9,6 +9,16 @@
       </div>
       <hr>
       <div class="booking-form-input-box">
+        <div style="padding-bottom:20px;" class="form-row">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tripType" value="oneWay" checked="checked">
+            <label class="form-check-label" for="tripType">One-Way</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tripType" value="roundTrip">
+            <label class="form-check-label" for="tripType">Round Trip</label>
+          </div>
+        </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="flyingFrom">Flying From</label>
@@ -46,7 +56,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDepDate">Departure Date</label>
-            <input type="date" class="form-control" name="inputDepDate">
+            <input type="date" class="form-control" name="inputDepDate" required="required">
           </div>
           <div class="form-group col-md-6">
             <label for="inputRetDate">Return Date</label>
@@ -55,19 +65,27 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="passengerCount">Passenger(s)</label>
+            <label for="passengerCount">Passengers (Adults)</label>
             <input type="number" value="1" class="form-control" name="passengerCount">
           </div>
+          <div class="form-group col-md-6">
+            <label for="childCount">Passengers (Children)</label>
+            <input type="number" value="0" class="form-control" name="childCount">
+          </div>
+        </div>
+        <!-- <div class="form-row">
           <div class="form-group col-md-6">
             <label for="travelClass">Travel Class</label>
             <select class="custom-select" name="travelClass">
               <option value="economy" selected>Economy</option>
-              <option value="business">Business</option>
+              <option value="BUSINESS">Business</option>
             </select>
           </div>
-        </div>
+        </div> -->
+
+
         <button type="submit" class="btn btn-lg btn-primary">Search Flights</button>
       </div>
     </form>
   </div>
-<%- include('partials/footer') %>
+  <%- include('partials/footer') %>

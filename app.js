@@ -1,6 +1,7 @@
 //jshint esversion:6
 require("dotenv").config();
 const express = require("express");
+const http = require("http");
 const https = require("https");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -11,6 +12,8 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 const Amadeus = require('amadeus');
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const moment = require('moment');
 
 
 const app = express();
@@ -100,8 +103,108 @@ app.get("/frontpage", function(req, res){
   }
 });
 
+
 app.get("/flight-booking", function(req, res){
   res.render("flight-booking");
+});
+
+app.post("/flight-booking-submit", async function(req,res){
+  console.log(req.body);
+  const tripType = req.body.tripType;
+  const flyingFrom = req.body.flyingFrom; //city code
+  const flyingTo = req.body.flyingTo;
+  const inputDepDate = req.body.inputDepDate;
+  const passengerCount= req.body.passengerCount;
+  const childCount = req.body.childCount;
+   if (tripType == "oneWay"){
+     amadeus.shopping.flightOffersSearch.get({
+       originLocationCode: flyingFrom,
+       destinationLocationCode: flyingTo,
+       departureDate: inputDepDate,
+       adults: passengerCount,
+       children: childCount,
+       max: 15
+     }).then(function (response) {
+       resBody = JSON.parse(response.body);
+       resBodyData = resBody.data;
+       aircraftCodeList = resBody.dictionaries.aircraft;
+       var i;
+       res.write("<h1 style='text-align:center; padding: 30px 0;'> Search Results: From " +flyingFrom + " to " + flyingTo + "</h1>");
+       for (i = 0; i < resBodyData.length; i++ ) {
+         res.write("<h3 style='padding-left: 30px;'>"+ flyingFrom + " to " + flyingTo + "</h3>");
+         res.write("<table style='padding: 10px 0 0 30px;'>");
+         res.write("<tr>");
+         res.write("<td>");
+         res.write("<p>Departure: <strong><em>Terminal " + resBodyData[i].itineraries[0].segments[0].departure.terminal + "</em></strong> at <strong><em>" + resBodyData[i].itineraries[0].segments[0].departure.at.slice(11,16) + "</em></strong></p>");
+         res.write("<p>Arrival: <strong><em>Terminal " + resBodyData[i].itineraries[0].segments[0].arrival.terminal + "</em></strong> at <strong><em>" + resBodyData[i].itineraries[0].segments[0].arrival.at.slice(11,16) + "</em></strong></p>");
+         res.write("<p>Bookable seats left: " + resBodyData[i].numberOfBookableSeats + "</p>" )
+         res.write("</td>");
+         res.write("<td style='padding-left: 30px;'>");
+         res.write("<p>Passengers: " + passengerCount + " Adult(s), " + childCount + " Child(ren)" + "</p>");
+         //res.write("<p>Duration: " + moment.duration(resBodyData[i].itineraries[0].duration) + "</p>");
+         res.write("<p> Base Price: " + resBodyData[i].price.base +" " + resBodyData[i].price.currency + "</p>");
+         res.write("<p>Total Price: " + resBodyData[i].price.grandTotal +" " + resBodyData[i].price.currency + "</p>");
+         //res.write("<p>Aircraft Code: " + resBodyData[i].itineraries[0].segments[1].aircraft.code + "<p>");
+         res.write("</td>");
+         res.write("<td style='padding-left: 30px;'>");
+         res.write("<a href='/book-tickets' role='button'>Book Tickets</a>");
+         res.write("</td>");
+         res.write("</tr>");
+         res.write("<table>");
+         res.write("<hr>");
+         res.send();
+       }
+     }).catch(function (response) {
+       console.error(response);
+     });
+   } else { // in case of round trip, return date is taken into consideration
+    const inputRetDate = req.body.inputRetDate;
+    const response = await amadeus.shopping.flightOffersSearch.get({
+        originLocationCode: flyingFrom,
+        destinationLocationCode: flyingTo,
+        departureDate: inputDepDate,
+        returnDate: inputRetDate,
+        adults: passengerCount,
+        children: childCount,
+        max: 15
+      }).then(function (response) {
+        resBody = JSON.parse(response.body);
+        resBodyData = resBody.data;
+        aircraftCodeList = resBody.dictionaries.aircraft;
+        var i;
+        res.write("<h1 style='text-align:center; padding: 30px 0;'> Search Results: From " +flyingFrom + " to " + flyingTo + "</h1>");
+        for (i = 0; i < resBodyData.length; i++ ) {
+          res.write("<h3 style='padding-left: 30px;'>"+ flyingFrom + " to " + flyingTo + "</h3>");
+          res.write("<table style='padding: 10px 0 0 30px;'>");
+          res.write("<tr>");
+          res.write("<td>");
+          res.write("<p>Departure: <strong><em>Terminal " + resBodyData[i].itineraries[0].segments[0].departure.terminal + "</em></strong> at <strong><em>" + resBodyData[i].itineraries[0].segments[0].departure.at.slice(11,16) + "</em></strong></p>");
+          res.write("<p>Arrival: <strong><em>Terminal " + resBodyData[i].itineraries[0].segments[0].arrival.terminal + "</em></strong> at <strong><em>" + resBodyData[i].itineraries[0].segments[0].arrival.at.slice(11,16) + "</em></strong></p>");
+          res.write("<p>Bookable seats left: " + resBodyData[i].numberOfBookableSeats + "</p>" )
+          res.write("</td>");
+          res.write("<td style='padding-left: 30px;'>");
+          res.write("<p>Passengers: " + passengerCount + " Adult(s), " + childCount + " Child(ren)" + "</p>");
+          //res.write("<p>Duration: " + moment.duration(resBodyData[i].itineraries[0].duration) + "</p>");
+          res.write("<p> Base Price: " + resBodyData[i].price.base +" " + resBodyData[i].price.currency + "</p>");
+          res.write("<p>Total Price: " + resBodyData[i].price.grandTotal +" " + resBodyData[i].price.currency + "</p>");
+          //res.write("<p>Aircraft Code: " + resBodyData[i].itineraries[0].segments[1].aircraft.code + "<p>");
+          res.write("</td>");
+          res.write("<td style='padding-left: 30px;'>");
+          res.write("<a href='/book-tickets' role='button'>Book Tickets</a>");
+          res.write("</td>");
+          res.write("</tr>");
+          res.write("<table>");
+          res.write("<hr>");
+          res.send();
+        }
+      }).catch(function (response) {
+        console.error(response);
+      });
+    }
+});
+
+app.get("/book-tickets", function(req, res){
+  res.render("book-tickets");
 });
 
 
@@ -116,19 +219,7 @@ app.post("/hotel-booking-submit", function(req,res){
   const checkOutDate = req.body.checkOutDate;
   const guestCount = req.body.guestCount;
   const roomCount= req.body.roomCount;
-  hotelURL = "https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=" + hotelLocation;
-  https.get(hotelURL,function(response){
-    response.on("data", function(data){
-      const hotelData = JSON.parse(data);
-      const name = hotelData.data[0].hotel.name;
-      const id = hotelData.data[0].hotel.hotelId;
-      const rating = hotelData.data[0].hotel.rating;
-      const address = hotelData.data[0].hotel.address.lines + hotelData.data[0].hotel.address.cityName;
-      const state = hotelData.data[0].hotel.address.stateCode;
-      const postalCode = hotelData.data[0].hotel.address.postalCode;
-      const contact = hotelData.data[0].hotel.contact.phone;
-    });
-  });
+
 });
 
 app.get("/car-booking", function(req, res){
@@ -203,11 +294,13 @@ app.post("/weather-form", function(req,res){
       const tempMin = weatherData.main.temp_min;
       const tempMax = weatherData.main.temp_max;
       const imageURL = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
-      res.write("<h1>The temperature in " + selectedCity + " is " + temp + " degrees Fahrenheit.</h1>")
+      res.write("<div style='max-width: 45%; border: 1px solid black;padding: 30px;margin: 10% auto 0;background-color: rgba(255, 255, 255, 0.6); text-align: center;'>");
+      res.write("<h2>The temperature in " + selectedCity + " is " + temp + " degrees Fahrenheit.</h3>")
       res.write("<p>Weather Description: " + weatherDescription + "</p>");
       res.write("<img src=" + imageURL + " alt='image'>");
       res.write("<p>Humidity: " + humidity + "%</p>");
       res.write("<p>Minimum and Maximum temperature: " + tempMin + ", " + tempMax + "</p>");
+      res.write("</div>");
       res.send();
     });
   });

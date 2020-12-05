@@ -61,18 +61,18 @@
         <label for="weatherCity">Holiday Destination</label>
         <select class="custom-select" name="weatherCity" required>
           <option selected>Choose</option>
-          <option value="Delhi">New Delhi, Delhi</option>
-          <option value="Mumbai">Mumbai, Maharashtra</option>
-          <option value="Hyderabad">Hyderabad, Telangana</option>
-          <option value="Chennai">Chennai, Tamil Nadu</option>
-          <option value="Kolkata">Kolkata, West Bengal</option>
-          <option value="Bengaluru">Bengaluru, Karnataka</option>
-          <option value="Kochi">Kochi, Kerala</option>
-          <option value="Jaipur">Jaipur, Rajasthan</option>
-          <option value="Dabolim">Dabolim, Goa</option>
-          <option value="Ahmedabad">Ahmedabad, Gujarat</option>
+          <option value="Chicago">Chicago, Illinois</option>
+          <option value="Boston">Boston, Massachusetts</option>
+          <option value="LAX">Los Angeles, California</option>
+          <option value="Phoenix">Phoenix, Arizona</option>
+          <option value="Atlanta">Atlanta, Georgia</option>
+          <option value="Jackson">Jackson, Mississippi</option>
+          <option value="Cleveland">Cleveland, Ohio</option>
+          <option value="Seattle">Seattle, Washington</option>
+          <option value="Philadelphia">Philadelphia, Pennsylvania</option>
+          <option value="Albany">Albany, New York</option>
         </select>
-      <button style="margin-top: 25px" type="submit" class="btn btn-primary btn-lg" onclick="showWeather()">Search for Weather</button>
+      <button style="margin-top: 25px" type="submit" class="btn btn-primary btn-lg">Search for Weather</button>
     </form>
   </div>
     <div id="weather-result">
@@ -81,9 +81,5 @@
     </div>
   </div>
 
-  <script>
-    function showWeather() {
-      //document.getElementById("weather-result").innerHTML = "";
-    }
-  </script>
+
   <%- include('partials/footer') %>

@@ -31,8 +31,21 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true, useUnifiedTopology: true})
+//******* MONGODB CONNECT
+mongoose.connect(
+  "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority",   //"mongodb://localhost:27017/E-Travel" 
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex:true
+  },
+  () => {
+    console.log("Users Database (MongoDB) is now connected");
+  }
+);
 mongoose.set("useCreateIndex", true)
+
+//const car = mongoose.model('Car.model', {name: String});
 
 const amadeus = new Amadeus({
   clientId: process.env.AMADEUS_KEY,
@@ -222,18 +235,53 @@ app.post("/hotel-booking-submit", function(req,res){
 
 });
 
+
 app.get("/car-booking", function(req, res){
-  res.render("car-booking");
+//   mongoose.connect(
+//   "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority",   //"mongodb://localhost:27017/E-Travel" 
+//   {
+//     useNewUrlParser: true, 
+//     useUnifiedTopology: true,
+//     useCreateIndex:true
+//   },
+//   () => {
+//     console.log("Users Database (MongoDB) is now connected");
+//   }
+// )
+//   const cursor = db.collection('cars').find(); //db is replaced by the name in mongoose library
+//   cursor.forEach(function(doc, err){
+//    resultArray.push(doc);
+//   }, function(){
+    res.render("car-booking");
+  });
+// });
+
+
+
+ app.post("/car-booking-submit", function(req,res){
+   //console.log(req.body);
+   const pickupLocation = req.body.pickupLocation; //city code
+   const pickupDate = req.body.pickupDate;
+   const dropoffDate = req.body.dropoffDate;
+   const seatingCapacity= req.body.seatingCapacity;
+   const carType = req.body.carType;
+//   const carType = req.body.carType;
+//   carURL = "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority";
+//   https.get(carURL, function(response){
+//     response.on("data", function(data){
+//       const carData = JSON.parse(data);
+//       const carName = carData.data[0].car.name;
+//       const id = carData.data[0].car.carId;
+//       const seatingCapacity = carData.data[0].car.capacity;
+//       const pickUpLocation = carData.data[0].car.location;
+//       const carType = carData.data[0].car.address.stateCode;
+//       const price = carData.data[0].car.address.price;
+//       const pickUpDate = carData.data[0].car.date;
+//     });
+// });
 });
 
-app.post("/car-booking-submit", function(req,res){
-  //console.log(req.body);
-  const pickupLocation = req.body.pickupLocation; //city code
-  const pickupDate = req.body.pickupDate;
-  const dropoffDate = req.body.dropoffDate;
-  const seatingCapacity= req.body.seatingCapacity;
-  const carType = req.body.carType;
-});
+
 
 app.get("/about", function(req,res){
   res.render("about");

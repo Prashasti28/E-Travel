@@ -142,42 +142,74 @@ app.post("/hotel-booking-submit", function(req,res){
   });
 });
 
+
 app.get("/car-booking", function(req, res){
-  res.render("car-booking");
+  mongoose.connect(
+  "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority",   //"mongodb://localhost:27017/E-Travel" 
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex:true
+  },
+  () => {
+    console.log("Users Database (MongoDB) is now connected");
+  }
+)
+  const cursor = db.collection('cars').find();
+  cursor.forEach(function(doc, err){
+   resultArray.push(doc);
+  }, function(){
+    res.render("car-booking");
+  });
 });
 
-//const car = mongoose.model('Cars', {name: String});
-
-//const brand = new Car({ name:'maruti'});
-//brand.save().then(() => console.log('hey'));
 
 
-
-//mongoose.set("useCreateIndex", true)
-
-// const carRouter = require('./routes/car');
-// app.use('/car', carRouter)
-
-app.post("/car-booking-submit", function(req,res){
-  //console.log(req.body);
-  const pickupLocation = req.body.pickupLocation; //city code
-  const pickupDate = req.body.pickupDate;
-  const dropoffDate = req.body.dropoffDate;
-  const seatingCapacity= req.body.seatingCapacity;
-  const carType = req.body.carType;
-  carURL = "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority";
-  https.get(carURL, function(response){
-    response.on("data", function(data){
-      const carData = JSON.parse(data);
-      const carName = carData.data[0].car.name;
-      const id = carData.data[0].car.carId;
-      const seatingCapacity = carData.data[0].car.capacity;
-      const pickUpLocation = carData.data[0].car.location;
-      const carType = carData.data[0].car.address.stateCode;
-      const price = carData.data[0].car.address.price;
-      const pickUpDate = carData.data[0].car.date;
-    });
+ app.post("/car-booking-submit", function(req,res){
+   //console.log(req.body);
+   const pickupLocation = req.body.pickupLocation; //city code
+   const pickupDate = req.body.pickupDate;
+   const dropoffDate = req.body.dropoffDate;
+   const seatingCapacity= req.body.seatingCapacity;
+   const carType = req.body.carType;
 });
+
+// app.get("/car-booking", function(req, res){
+//   res.render("car-booking");
+// });
+
+// //const car = mongoose.model('Cars', {name: String});
+
+// //const brand = new Car({ name:'maruti'});
+// //brand.save().then(() => console.log('hey'));
+
+
+
+// //mongoose.set("useCreateIndex", true)
+
+// // const carRouter = require('./routes/car');
+// // app.use('/car', carRouter)
+
+// app.post("/car-booking-submit", function(req,res){
+//   //console.log(req.body);
+//   const pickupLocation = req.body.pickupLocation; //city code
+//   const pickupDate = req.body.pickupDate;
+//   const dropoffDate = req.body.dropoffDate;
+//   const seatingCapacity= req.body.seatingCapacity;
+//   const carType = req.body.carType;
+//   carURL = "mongodb+srv://gauri-dasgupta:APproject@cars.7e3cr.mongodb.net/cars?retryWrites=true&w=majority";
+//   https.get(carURL, function(response){
+//     response.on("data", function(data){
+//       const carData = JSON.parse(data);
+//       const carName = carData.data[0].car.name;
+//       const id = carData.data[0].car.carId;
+//       const seatingCapacity = carData.data[0].car.capacity;
+//       const pickUpLocation = carData.data[0].car.location;
+//       const carType = carData.data[0].car.address.stateCode;
+//       const price = carData.data[0].car.address.price;
+//       const pickUpDate = carData.data[0].car.date;
+//     });
+// });
 
 app.get("/about", function(req,res){
   res.render("about");

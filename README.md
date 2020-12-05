@@ -1,6 +1,6 @@
 # GoClouds
-GoClouds is E-Travel website focused on searching and booking flights/hotels and cars.\
-We have used Amadeus for hotels and flights and basic mongodb for cars\
+GoClouds is E-Travel website focused on searching and booking flights/hotels and cars.<br />
+We have used Amadeus for hotels and flights and basic mongodb for cars
 
 ## References
 https://youtu.be/ZKwrOXl5TDI\
